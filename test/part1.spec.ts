@@ -92,7 +92,7 @@ describe("promise.then(onFulfilled, onRejected)", function() {
         rejectFn = reject;
       });
       const onRejected = jest.fn();
-      prom.then(onRejected);
+      prom.then(null, onRejected);
       return delay().then(() => {
         expect(onRejected).not.toBeCalled();
         rejectFn(ERR);
